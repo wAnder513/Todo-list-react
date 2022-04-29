@@ -15,7 +15,7 @@ export const AddTodo = ({
       className={styles['add-todo-input']}
       onChange={handleChange}
     />
-    <button type="submit" aria-label="Add todo">
+    <button className={styles['add-todo-button']} type="submit" aria-label="Add todo">
       <PlusIcon />
     </button>
   </form>
