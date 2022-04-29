@@ -13,13 +13,14 @@
   margin-right: 10px;
 }
 
-.task-close,
 .task-buttons {
   display: flex;
   align-items: center;
 }
 
 .task-close {
+  display: flex;
+  justify-content: center;
   align-items: center;
   background-color: rgba(248, 113, 113);
   margin-right: 5px;
