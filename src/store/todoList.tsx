@@ -21,30 +21,31 @@ class Todo {
       isCompleted: false,
     },
   ]
-  visableTodos = [...this.todos]
+  visableTodos = this.todos
 
   constructor() {
     makeAutoObservable(this)
   }
 
-  addTodo(todo) {
+  addTodo(todo: any) {
+    console.log(todo)
     this.todos.push(todo)
-    this.visableTodos = [...this.todos]
+    this.visableTodos = this.todos
   }
 
-  removeTodo(id) {
+  removeTodo(id: string) {
     this.todos = this.todos.filter((todo) => todo.id !== id)
-    this.visableTodos = [...this.todos]
+    this.visableTodos = this.todos
   }
 
-  completeTodo(id) {
+  completeTodo(id: string) {
     this.todos = [...this.todos].map((todo) =>
       todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
     )
-    this.visableTodos = [...this.todos]
+    this.visableTodos = this.todos
   }
 
-  sortTodo(e) {
+  sortTodo(e: string) {
     switch (e) {
       case 'All':
         this.visableTodos = this.todos
