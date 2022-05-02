@@ -1,34 +1,15 @@
 import { makeAutoObservable } from 'mobx'
+import {AddTodoTask} from '../types'
 
-class Todo {
-  todos = [
-    {
-      id: '0',
-      title: 'Task 1',
-      task: 'Do laundry 1',
-      isCompleted: false,
-    },
-    {
-      id: '1',
-      title: 'Task 2',
-      task: 'Do laundry 2',
-      isCompleted: false,
-    },
-    {
-      id: '2',
-      title: 'Task 2',
-      task: 'Do laundry 3',
-      isCompleted: false,
-    },
-  ]
-  visableTodos = this.todos
+class Todo  {
+  todos: Array<AddTodoTask> = []
+  visableTodos: Array<AddTodoTask> = []
 
   constructor() {
     makeAutoObservable(this)
   }
-
-  addTodo(todo: any) {
-    console.log(todo)
+  
+  addTodo(todo: AddTodoTask) {
     this.todos.push(todo)
     this.visableTodos = this.todos
   }
