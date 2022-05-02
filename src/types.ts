@@ -1,13 +1,13 @@
 import { ChangeEvent, FormEvent } from "react"
 
-export type Todo = {
+export type AddTodoTask = {
   id: string
   task: string
   isCompleted: boolean
 }
 
 export type TodoProps = {
-  todo: Todo
+  todo: AddTodoTask
   handleCheckTodo: (id: string) => void
   handleDeleteTodo: (id: string) => void
 }

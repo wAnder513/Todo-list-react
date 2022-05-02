@@ -5,6 +5,7 @@ import styles from '../assets/styles/Todos.module.scss'
 
 import { Row } from './Row'
 import { AddTodo } from './AddTodo'
+import {AddTodoTask} from '../types'
 import todo from '../store/todoList'
 
 export const Todos = observer(() => {
@@ -71,7 +72,8 @@ export const Todos = observer(() => {
         ))}
       </select>
 
-      {todo.visableTodos.map((t) => (
+      
+      {todo.visableTodos.map((t: AddTodoTask) => (
         <Row
           key={t.id}
           todo={t}
