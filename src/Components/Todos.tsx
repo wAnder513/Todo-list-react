@@ -13,11 +13,7 @@ export const Todos = observer(() => {
   const [sort, setSort] = useState('All')
 
   const hasTodos = todo.visableTodos.length > 0
-  const options = [
-    { value: 'All' },
-    { value: 'Completed' },
-    { value: 'Uncompleted' },
-  ]
+  const options = ['All', 'Completed','Uncompleted']
 
   const handleChange = (e: ChangeEvent) => {
     const { value } = e.target as HTMLInputElement
@@ -66,8 +62,8 @@ export const Todos = observer(() => {
         onChange={(event) => sortTodo(event.target.value)}
       >
         {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.value}
+          <option key={option} value={option}>
+            {option}
           </option>
         ))}
       </select>
